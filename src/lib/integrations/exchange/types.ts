@@ -7,7 +7,7 @@ export interface ExchangeSnapshot {
   base: "EUR";
   /** Data de referência publicada pela fonte (ex.: dia útil do BCE). */
   referenceDate: string | null;
-  /** Momento em que a LIVORA buscou os dados. */
+  /** Momento em que o Partiu Morar buscou os dados. */
   fetchedAt: string | null;
   /** Unidades de cada moeda por 1 EUR. */
   rates: Record<string, number>;

@@ -56,7 +56,7 @@ export const SORT_LABELS: Record<SortKey, string> = {
   relevancia: "Relevância",
   custo: "Menor custo de vida",
   salario: "Maior salário mediano",
-  qualidade: "Maior Índice LIVORA",
+  qualidade: "Maior Índice Partiu Morar",
   compatibilidade: "Compatibilidade com meu perfil",
   nome: "Nome (A–Z)",
 };
@@ -65,7 +65,7 @@ export const SORT_CRITERIA: Record<SortKey, string> = {
   relevancia: "Destinos em alta primeiro; depois ordem alfabética.",
   custo: "Custo mensal estimado para 1 pessoa no perfil intermediário, convertido para EUR pela taxa de referência.",
   salario: "Salário bruto mensal mediano convertido para EUR. Não considera impostos.",
-  qualidade: "Índice LIVORA: média ponderada dos indicadores disponíveis. Veja a metodologia.",
+  qualidade: "Índice Partiu Morar: média ponderada dos indicadores disponíveis. Veja a metodologia.",
   compatibilidade: "Pontuação a partir das respostas do questionário Meu destino ideal.",
   nome: "Ordem alfabética.",
 };

@@ -11,11 +11,11 @@ export function ClimateChart({ values }: { values: number[] }) {
       <div className="h-56" aria-hidden>
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={data} margin={{ left: -16, right: 4, top: 8 }}>
-            <CartesianGrid stroke="#ebe6dc" vertical={false} />
+            <CartesianGrid stroke="#efe6d8" vertical={false} />
             <XAxis dataKey="month" tick={{ fontSize: 11, fill: "#8a939e" }} axisLine={false} tickLine={false} />
             <YAxis tick={{ fontSize: 11, fill: "#8a939e" }} axisLine={false} tickLine={false} unit="°" />
-            <Tooltip formatter={(v) => [`${v} °C`, "Máxima média"]} cursor={{ fill: "#f5f2ec" }} />
-            <Bar dataKey="v" radius={[6, 6, 0, 0]} fill="#1e8f8a" />
+            <Tooltip formatter={(v) => [`${v} °C`, "Máxima média"]} cursor={{ fill: "#f8f2e9" }} />
+            <Bar dataKey="v" radius={[6, 6, 0, 0]} fill="#12a38a" />
           </BarChart>
         </ResponsiveContainer>
       </div>

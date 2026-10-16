@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { withSocial } from "@/lib/seo";
 import { PageHeader } from "@/components/ui/primitives";
 
-export const metadata: Metadata = { title: "Privacidade", description: "Como a LIVORA trata dados pessoais, em linha com a LGPD.", alternates: { canonical: "/privacidade" } };
+export const metadata: Metadata = withSocial({ title: "Privacidade", description: "Como o Partiu Morar trata dados pessoais, em linha com a LGPD.", alternates: { canonical: "/privacidade" } });
 
 export default function PrivacidadePage() {
   return (

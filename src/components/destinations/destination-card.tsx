@@ -75,7 +75,7 @@ export function DestinationCard({
             </p>
           </div>
           {index !== null && (
-            <div className="text-right" title="Índice LIVORA (0–100). Veja os componentes na página do destino.">
+            <div className="text-right" title="Índice Partiu Morar (0–100). Veja os componentes na página do destino.">
               <p className="text-lg leading-none font-semibold tabular-nums text-teal-700">{index}</p>
               <p className="mt-0.5 text-[10px] font-medium tracking-wide text-subtle uppercase">Índice</p>
             </div>

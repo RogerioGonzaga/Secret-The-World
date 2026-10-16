@@ -9,7 +9,7 @@ function withScores(dest: Destination, score: number | null): Destination {
   return { ...dest, quality };
 }
 
-describe("Índice LIVORA", () => {
+describe("Índice Partiu Morar", () => {
   it("pesos somam 1", () => {
     expect(Object.values(INDEX_WEIGHTS).reduce((a, b) => a + b, 0)).toBeCloseTo(1);
   });

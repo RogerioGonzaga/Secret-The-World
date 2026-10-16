@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { withSocial } from "@/lib/seo";
 import { Suspense } from "react";
 import { getDestinations } from "@/lib/data/repository";
 import { getExchangeSnapshot } from "@/lib/integrations/exchange/service";
@@ -6,11 +7,11 @@ import { parseCompareSlugs } from "@/lib/compare/compare";
 import { Comparator } from "@/components/compare/comparator";
 import { PageHeader } from "@/components/ui/primitives";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSocial({
   title: "Comparar cidades",
   description: "Compare até três cidades lado a lado: custo de vida, aluguel, salários, poder de compra, segurança, clima e qualidade de vida.",
   alternates: { canonical: "/comparar" },
-};
+});
 
 export default async function CompararPage({ searchParams }: { searchParams: Promise<{ cidades?: string }> }) {
   const [{ cidades }, snapshot] = await Promise.all([searchParams, getExchangeSnapshot()]);

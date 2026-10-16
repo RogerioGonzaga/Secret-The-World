@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { withSocial } from "@/lib/seo";
 import Link from "next/link";
 import { sources } from "@/lib/data/seed/sources";
 import { dataKindLabels } from "@/lib/format";
@@ -8,11 +9,11 @@ import { COST_LEVEL_EUR } from "@/lib/explore/filters";
 import { PageHeader, Badge } from "@/components/ui/primitives";
 import { formatPercent } from "@/lib/format";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSocial({
   title: "Metodologia e fontes de dados",
-  description: "Como a LIVORA calcula custo de vida, salário líquido, compatibilidade e o Índice LIVORA, e de onde vêm os dados.",
+  description: "Como o Partiu Morar calcula custo de vida, salário líquido, compatibilidade e o Índice Partiu Morar, e de onde vêm os dados.",
   alternates: { canonical: "/metodologia" },
-};
+});
 
 function H2({ id, children }: { id: string; children: React.ReactNode }) {
   return <h2 id={id} className="font-display mt-14 scroll-mt-24 text-3xl font-medium">{children}</h2>;
@@ -21,7 +22,7 @@ function H2({ id, children }: { id: string; children: React.ReactNode }) {
 export default function MetodologiaPage() {
   return (
     <>
-      <PageHeader eyebrow="Transparência" title="Metodologia e fontes" description="Cada número na LIVORA deve poder ser explicado. Aqui estão as fontes, as fórmulas e as limitações." />
+      <PageHeader eyebrow="Transparência" title="Metodologia e fontes" description="Cada número no Partiu Morar deve poder ser explicado. Aqui estão as fontes, as fórmulas e as limitações." />
       <div className="container-page max-w-4xl py-6 text-[15px] leading-relaxed text-navy-800">
         <H2 id="tipos">Tipos de dado</H2>
         <p className="mt-3 text-muted">A interface sempre distingue a natureza de cada informação:</p>
@@ -41,7 +42,7 @@ export default function MetodologiaPage() {
           <p><strong>Ainda são demonstrativos:</strong> custos de vida por categoria, salários (medianos e por profissão), alíquotas efetivas de impostos, indicadores de qualidade de vida e temperaturas mensais.</p>
           <p className="mt-2"><strong>Estimativas editoriais pendentes de verificação:</strong> população (com o instituto de referência indicado) e informações gerais de imigração.</p>
           <p className="mt-2"><strong>Conectados a fontes reais:</strong> câmbio (BCE via Frankfurter), códigos de moeda (ISO 4217) e fusos horários (IANA).</p>
-          <p className="mt-2">Quando a variável <code>NEXT_PUBLIC_LIVORA_DATA_MODE=production</code> está ativa, nenhum valor demonstrativo é exibido: cidades sem dados verificados saem do catálogo e indicadores aparecem como “Dados indisponíveis”.</p>
+          <p className="mt-2">Quando o site opera em modo de produção, nenhum valor demonstrativo é exibido: cidades sem dados verificados saem do catálogo e indicadores aparecem como “Dados indisponíveis”.</p>
         </div>
 
         <H2 id="custo">Custo de vida</H2>
@@ -56,13 +57,13 @@ export default function MetodologiaPage() {
 
         <H2 id="salario">Salário bruto e líquido</H2>
         <p className="mt-3">Salários são sempre brutos mensais. O líquido é estimado aplicando o modelo tributário do país (hoje, uma alíquota efetiva demonstrativa para pessoa solteira, residente e contratada localmente). O motor também suporta faixas progressivas com contribuições sociais e número de salários por ano.</p>
-        <p className="mt-3 text-muted">Se não há modelo tributário para o país, a LIVORA não estima o líquido e nunca trata o valor bruto como líquido.</p>
+        <p className="mt-3 text-muted">Se não há modelo tributário para o país, o Partiu Morar não estima o líquido e nunca trata o valor bruto como líquido.</p>
 
         <H2 id="cambio">Câmbio</H2>
         <p className="mt-3">Taxas de referência do Banco Central Europeu via API Frankfurter, atualizadas em dias úteis e armazenadas em cache por 1 hora. Conversões entre moedas não-euro são cruzadas via EUR. O dirham dos Emirados (AED) é derivado do dólar pela paridade fixa oficial de 3,6725. Moedas fora da cobertura do BCE (como ARS e COP) aparecem como “cotação indisponível” em produção.</p>
         <p className="mt-3 text-muted">Se a API falhar, mostramos a última cotação obtida com sua data. Taxas de referência não incluem spread bancário nem tarifas.</p>
 
-        <H2 id="indice">Índice LIVORA</H2>
+        <H2 id="indice">Índice Partiu Morar</H2>
         <p className="mt-3">Média ponderada (0–100) dos indicadores disponíveis. Componentes sem dado são excluídos e os pesos restantes são renormalizados; com menos de {formatPercent(MIN_COVERAGE)} do peso disponível, o índice não é calculado.</p>
         <div className="mt-4 overflow-x-auto rounded-2xl border border-sand-200 bg-white">
           <table className="w-full text-sm">

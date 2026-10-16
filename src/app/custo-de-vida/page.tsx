@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { withSocial } from "@/lib/seo";
 import Link from "next/link";
 import { getDestinations } from "@/lib/data/repository";
 import { getExchangeSnapshot } from "@/lib/integrations/exchange/service";
@@ -11,11 +12,11 @@ import { DemoInline } from "@/components/layout/demo-banner";
 
 export const revalidate = 3600;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSocial({
   title: "Calculadora de custo de vida e poder de compra",
   description: "Descubra quanto sobra do seu salário em outra cidade, com conversão cambial, estimativa de impostos e perfis de gasto.",
   alternates: { canonical: "/custo-de-vida" },
-};
+});
 
 export default async function CustoDeVidaPage({ searchParams }: { searchParams: Promise<{ cidade?: string }> }) {
   const [{ cidade }, snapshot] = await Promise.all([searchParams, getExchangeSnapshot()]);

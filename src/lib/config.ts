@@ -4,11 +4,15 @@
  */
 export type DataMode = "demo" | "production";
 
+/** Domínio oficial. NEXT_PUBLIC_SITE_URL só deve sobrescrevê-lo em ambientes de teste ou prévia. */
+export const OFFICIAL_URL = "https://partiumorar.com.br";
+
 export const siteConfig = {
-  name: "LIVORA",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  name: "Partiu Morar",
+  tagline: "Seu próximo destino começa aqui.",
+  url: (process.env.NEXT_PUBLIC_SITE_URL || OFFICIAL_URL).replace(/\/$/, ""),
   description:
-    "Descubra onde seu dinheiro rende mais, compare custo de vida, salários e qualidade de vida em cidades do mundo todo.",
+    "Descubra onde vale a pena morar: compare custo de vida, salários, moedas, oportunidades de trabalho e qualidade de vida em cidades do mundo todo.",
   locale: "pt-BR",
 };
 

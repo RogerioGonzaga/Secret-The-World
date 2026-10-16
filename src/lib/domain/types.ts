@@ -1,5 +1,5 @@
 /**
- * Modelos de domínio da LIVORA. Toda informação quantitativa carrega sua proveniência
+ * Modelos de domínio do Partiu Morar. Toda informação quantitativa carrega sua proveniência
  * para que a interface possa mostrar fonte, data e natureza do dado.
  */
 

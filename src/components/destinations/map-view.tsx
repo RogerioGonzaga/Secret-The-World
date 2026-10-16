@@ -22,7 +22,7 @@ export default function MapView({ destinations }: { destinations: Destination[] 
             key={d.slug}
             center={[d.coordinates.lat, d.coordinates.lng]}
             radius={9}
-            pathOptions={{ color: "#ffffff", weight: 2, fillColor: "#137572", fillOpacity: 0.95 }}
+            pathOptions={{ color: "#ffffff", weight: 2, fillColor: "#0b8572", fillOpacity: 0.95 }}
           >
             <Popup>
               <div className="min-w-44 font-sans">

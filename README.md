@@ -1,7 +1,13 @@
-# LIVORA
+# Partiu Morar
 
-Plataforma para descobrir onde morar melhor: explore cidades do mundo, compare custo de vida, salários,
-câmbio e qualidade de vida, simule quanto sobra do seu salário e encontre destinos que combinam com você.
+**Seu próximo destino começa aqui.**
+
+Plataforma para descobrir onde vale a pena morar: explore cidades do mundo, compare custo de vida, salários,
+moedas, oportunidades de trabalho e qualidade de vida, simule quanto sobra do seu salário e encontre destinos
+que combinam com você.
+
+Domínio oficial: <https://partiumorar.com.br> (configuração de DNS e hospedagem descrita em
+[Implantação e domínio](#implantação-e-domínio); o domínio ainda não foi conectado por este repositório).
 
 > **Versão de desenvolvimento.** Custos, salários, alíquotas, indicadores de qualidade de vida e
 > temperaturas mensais são **dados demonstrativos**, sinalizados em toda a interface. O câmbio vem de
@@ -16,7 +22,7 @@ câmbio e qualidade de vida, simule quanto sobra do seu salário e encontre dest
   carregamento progressivo e URL compartilhável.
 - **Página de destino** (`/destinos/[slug]`): visão geral, custo de vida por perfil (econômico, intermediário,
   confortável; individual ou família), salários brutos e líquidos estimados, calculadora de poder de compra,
-  moeda e histórico de câmbio, indicadores com fonte e metodologia, Índice LIVORA com componentes, moradia,
+  moeda e histórico de câmbio, indicadores com fonte e metodologia, Índice Partiu Morar com componentes, moradia,
   imigração com links oficiais, vida prática, clima mensal e ferramentas (favoritar, comparar, compartilhar,
   imprimir, destinos semelhantes).
 - **Calculadora** (`/custo-de-vida`): renda bruta ou líquida em qualquer moeda, conversão, impostos estimados,
@@ -95,15 +101,36 @@ listas, checklist e preferências) e políticas de Row Level Security. `supabase
 As migrações e o seed foram aplicados com sucesso em PostgreSQL (PGlite) durante o desenvolvimento.
 A aplicação ainda lê os seeds em TypeScript; a troca para o banco está descrita em `docs/arquitetura.md`.
 
-## Implantação
+## Implantação e domínio
 
 Funciona em qualquer host com Node.js (Vercel, Render, Fly.io, Docker).
 
-1. Configure `NEXT_PUBLIC_SITE_URL` com o domínio final.
-2. Mantenha `NEXT_PUBLIC_LIVORA_DATA_MODE=demo` em ambientes de teste; use `production` apenas quando os
-   dados verificados estiverem carregados.
-3. Em produção, troque o servidor de tiles do OpenStreetMap por um provedor com contrato.
-4. `npm run build && npm start` (ou o fluxo padrão do provedor).
+**O que o código já faz para o domínio `https://partiumorar.com.br`:**
+
+- `siteConfig.url` (`src/lib/config.ts`) usa o domínio oficial por padrão; URLs canônicas, `sitemap.xml`,
+  `robots.txt`, Open Graph e `manifest.webmanifest` são gerados a partir dele.
+- `NEXT_PUBLIC_SITE_URL` só deve sobrescrevê-lo em prévias ou testes (ex.: `http://localhost:3000`).
+- `www.partiumorar.com.br` redireciona permanentemente para o domínio sem `www` (`next.config.ts`).
+
+**Etapas externas (feitas por você no provedor de hospedagem e no registrador):**
+
+1. **Hospedagem:** crie o projeto a partir deste repositório, defina as variáveis de ambiente
+   (`NEXT_PUBLIC_SITE_URL=https://partiumorar.com.br`, `NEXT_PUBLIC_LIVORA_DATA_MODE` e as demais do
+   `.env.example`) e adicione os domínios `partiumorar.com.br` e `www.partiumorar.com.br` ao projeto.
+2. **Registrador (Registro.br):** no painel do domínio, use os servidores DNS do provedor ou crie os registros
+   que ele indicar (normalmente um registro `A`/`ALIAS` para o domínio raiz e um `CNAME` para `www`). Use
+   exatamente os valores mostrados pelo provedor.
+3. **HTTPS:** aguarde a propagação do DNS; a maioria dos provedores emite o certificado automaticamente.
+4. **Buscadores:** verifique o domínio no Google Search Console (registro `TXT` no DNS) e envie
+   `https://partiumorar.com.br/sitemap.xml`.
+5. **Dados:** mantenha `NEXT_PUBLIC_LIVORA_DATA_MODE=demo` em prévias; use `production` apenas quando os
+   dados verificados estiverem carregados (no modo `production` cidades sem dados verificados saem do catálogo).
+6. Em produção, troque o servidor de tiles do OpenStreetMap por um provedor com contrato.
+7. `npm run build && npm start` (ou o fluxo padrão do provedor).
+
+O nome técnico da variável `NEXT_PUBLIC_LIVORA_DATA_MODE`, os identificadores de fonte `livora-demo` e
+`livora-editorial` e as chaves de `localStorage` (`livora:*`) foram mantidos de propósito para preservar a
+compatibilidade com dados e configurações existentes.
 
 ## O que falta para produção
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { withSocial } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AlertTriangle, CheckCircle2, Clock, ExternalLink, Globe2, Languages, MapPin, Users, Wallet } from "lucide-react";
@@ -34,12 +35,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const dest = getDestination(slug);
   if (!dest) return { title: "Destino não encontrado" };
   const title = `Morar em ${dest.name}, ${dest.country.name}: custo de vida, salários e qualidade de vida`;
-  return {
+  return withSocial({
     title,
     description: dest.summary,
     alternates: { canonical: `/destinos/${dest.slug}` },
-    openGraph: { title, description: dest.summary, images: [{ url: dest.image.url, alt: dest.image.alt }] },
-  };
+    openGraph: { images: [{ url: dest.image.url, alt: dest.image.alt }] },
+  });
 }
 
 const sections = [
@@ -228,7 +229,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               </div>
               <div>
                 <h3 className="font-semibold">Portais de emprego</h3>
-                <p className="mt-1 mb-3 text-xs text-subtle">A LIVORA não verifica vagas nem garante disponibilidade.</p>
+                <p className="mt-1 mb-3 text-xs text-subtle">O Partiu Morar não verifica vagas nem garante disponibilidade.</p>
                 <LinkList links={dest.country.jobPortals} />
               </div>
             </div>
@@ -255,13 +256,13 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               ))}
             </div>
             <div className="rounded-2xl bg-navy-900 p-5 text-white">
-              <p className="text-sm text-white/70">Índice LIVORA</p>
+              <p className="text-sm text-white/70">Índice Partiu Morar</p>
               <p className="font-display mt-1 text-5xl tabular-nums">{index.value ?? "—"}<span className="text-lg text-white/50">/100</span></p>
               <p className="mt-2 text-xs leading-relaxed text-white/60">
                 Média ponderada dos componentes com dados ({formatPercent(index.coverage)} do peso total disponível). Não é uma verdade absoluta: veja os componentes.
               </p>
               <table className="mt-4 w-full text-xs">
-                <caption className="sr-only">Componentes do Índice LIVORA</caption>
+                <caption className="sr-only">Componentes do Índice Partiu Morar</caption>
                 <thead className="text-white/50"><tr><th scope="col" className="pb-1 text-left font-medium">Componente</th><th scope="col" className="pb-1 text-right font-medium">Peso</th><th scope="col" className="pb-1 text-right font-medium">Nota</th><th scope="col" className="pb-1 text-right font-medium">Pontos</th></tr></thead>
                 <tbody>
                   {index.components.map((c) => (
@@ -298,7 +299,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
             </div>
             <div className="rounded-2xl border border-sand-200 bg-white p-5">
               <h3 className="font-semibold">Portais imobiliários</h3>
-              <p className="mt-1 mb-3 text-xs text-subtle">Links externos, sem parceria. A LIVORA não verifica anúncios nem preços.</p>
+              <p className="mt-1 mb-3 text-xs text-subtle">Links externos, sem parceria. O Partiu Morar não verifica anúncios nem preços.</p>
               <LinkList links={dest.country.housingPortals} />
             </div>
           </div>

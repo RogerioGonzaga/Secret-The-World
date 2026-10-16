@@ -84,7 +84,7 @@ export function compareDestinations(dests: Destination[], opts: CompareOptions, 
   for (const id of ["safety", "health", "climate", "mobility", "internet"] as IndicatorId[]) {
     rows.push({ id, group: "qualidade", label: indicatorMeta[id].label, better: "higher", format: "score", values: dests.map((d) => d.quality[id].score) });
   }
-  rows.push({ id: "index", group: "qualidade", label: "Índice LIVORA", better: "higher", format: "score", values: dests.map((d) => computeLivoraIndex(d).value) });
+  rows.push({ id: "index", group: "qualidade", label: "Índice Partiu Morar", better: "higher", format: "score", values: dests.map((d) => computeLivoraIndex(d).value) });
 
   const text = (id: string, label: string, fn: (d: Destination) => string): CompareRow => ({
     id,

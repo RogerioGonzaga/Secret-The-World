@@ -1,8 +1,8 @@
 {
-  "name": "livora",
+  "name": "partiu-morar",
   "version": "0.1.0",
   "private": true,
-  "description": "LIVORA — plataforma para descobrir onde morar melhor.",
+  "description": "Partiu Morar — plataforma para descobrir onde morar melhor.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

@@ -55,16 +55,16 @@ export default async function HomePage() {
         {hero && (
           <CityImage src={hero.image.url} alt="" name="" sizes="100vw" priority className="absolute inset-0 -z-10 opacity-70" />
         )}
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgb(7_19_32/0.55)_0%,rgb(7_19_32/0.35)_45%,rgb(7_19_32/0.85)_100%)]" />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgb(10_21_48/0.55)_0%,rgb(10_21_48/0.35)_45%,rgb(10_21_48/0.85)_100%)]" />
         <div className="container-page pt-20 pb-16 md:pt-32 md:pb-24">
           <p className="mb-5 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-medium tracking-wide text-white/90 ring-1 ring-white/20 backdrop-blur">
             <Compass className="size-3.5" aria-hidden /> {destinations.length} destinos em {continentCounts.length} continentes
           </p>
           <h1 className="font-display max-w-4xl text-[2.6rem] leading-[1.04] font-medium tracking-tight text-white sm:text-6xl md:text-7xl">
-            Seu próximo capítulo começa em algum lugar do mundo.
+            Seu próximo destino começa aqui.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/80 md:text-xl">
-            Descubra onde seu dinheiro rende mais, encontre novas oportunidades e compare como seria sua vida em qualquer lugar.
+            Descubra onde vale a pena morar comparando custo de vida, salários, moedas, oportunidades de trabalho e qualidade de vida.
           </p>
           <HeroSearch items={searchItems} className="mt-10 max-w-2xl" />
           <div className="mt-5 flex flex-wrap items-center gap-2 text-sm">
@@ -237,7 +237,7 @@ export default async function HomePage() {
 
       {/* 8. Como funciona */}
       <section className="container-page pt-24">
-        <SectionHeading eyebrow="Como a LIVORA funciona" title="Planejamento com números que você consegue auditar" />
+        <SectionHeading eyebrow="Como o Partiu Morar funciona" title="Planejamento com números que você consegue auditar" />
         <ol className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {[
             { icon: Compass, title: "Explore", text: "Filtre destinos por orçamento, clima, idioma, segurança e mercado de trabalho." },

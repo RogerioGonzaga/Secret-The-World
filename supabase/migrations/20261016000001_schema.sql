@@ -1,4 +1,4 @@
--- LIVORA — esquema inicial (PostgreSQL / Supabase)
+-- Partiu Morar — esquema inicial (PostgreSQL / Supabase)
 -- Catálogo público (países, cidades, custos, salários, indicadores) + dados privados de usuários.
 -- Toda medida quantitativa referencia uma linha de `data_sources` e guarda datas de coleta/referência.
 

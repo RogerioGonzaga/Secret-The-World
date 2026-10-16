@@ -1,10 +1,10 @@
 import type { Article } from "@/lib/domain/types";
 
 /**
- * Guias editoriais. São textos de orientação geral escritos pela equipe da LIVORA, sem estatísticas
+ * Guias editoriais. São textos de orientação geral escritos pela equipe do Partiu Morar, sem estatísticas
  * nem citações de pesquisas. Antes do lançamento devem passar por revisão editorial e jurídica.
  */
-const author = "Equipe editorial LIVORA";
+const author = "Equipe editorial Partiu Morar";
 
 export const articles: Article[] = [
   {
@@ -26,7 +26,7 @@ export const articles: Article[] = [
       { type: "ul", items: ["Quantas pessoas vão morar com você?", "Você precisa de carro ou o transporte público resolve?", "O seguro saúde é obrigatório para o seu tipo de visto?", "Haverá escola particular ou creche?"] },
       { type: "h2", text: "3. Converta pelo câmbio, mas pense em renda local" },
       { type: "p", text: "Converter preços para reais ajuda a ter noção, mas se você vai receber na moeda local, o que importa é a relação entre o salário local e o custo local. Um café que parece caro em reais pode ser barato para quem ganha em euros." },
-      { type: "callout", text: "Na LIVORA, a calculadora de poder de compra faz essa conta de forma transparente: converte sua renda, aplica a estimativa de impostos quando ela existe e mostra quanto sobra." },
+      { type: "callout", text: "No Partiu Morar, a calculadora de poder de compra faz essa conta de forma transparente: converte sua renda, aplica a estimativa de impostos quando ela existe e mostra quanto sobra." },
       { type: "h2", text: "4. Acrescente uma margem de segurança" },
       { type: "p", text: "Os primeiros meses costumam ser mais caros: você ainda não conhece os mercados mais baratos, pode morar temporariamente em um lugar mobiliado e terá gastos inesperados com documentação. Planeje uma margem extra para esse período." },
     ],
@@ -133,7 +133,7 @@ export const articles: Article[] = [
       { type: "h2", text: "Quanto tempo de custo de vida guardar" },
       { type: "p", text: "Depende de você já ter emprego garantido ou não. Quem chega sem trabalho precisa de uma reserva para mais meses do que quem já tem contrato assinado. Alguns vistos exigem comprovação de meios financeiros mínimos; confira o valor no site oficial." },
       { type: "h2", text: "Câmbio e transferências" },
-      { type: "p", text: "Compare o custo total das transferências internacionais, somando tarifa e spread do câmbio. A cotação de referência que você vê em sites e na LIVORA não é a que o banco vai aplicar." },
+      { type: "p", text: "Compare o custo total das transferências internacionais, somando tarifa e spread do câmbio. A cotação de referência que você vê em sites e no Partiu Morar não é a que o banco vai aplicar." },
     ],
   },
 ];

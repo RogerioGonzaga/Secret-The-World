@@ -5,7 +5,7 @@ import { referenceMonthlyCost } from "./cost-of-living";
 import { estimateNetMonthly } from "./tax";
 
 /**
- * Índice LIVORA: média ponderada dos indicadores de qualidade de vida disponíveis
+ * Índice Partiu Morar: média ponderada dos indicadores de qualidade de vida disponíveis
  * mais um componente de equilíbrio entre renda e custo de vida.
  *
  * - Componentes sem dado são EXCLUÍDOS e os pesos restantes são renormalizados.

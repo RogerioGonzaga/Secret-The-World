@@ -6,31 +6,31 @@
   --font-display: "Fraunces Variable", ui-serif, Georgia, serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 
-  --color-ink: #0b1b2b;
-  --color-navy-950: #071320;
-  --color-navy-900: #0b1b2b;
-  --color-navy-800: #12283e;
-  --color-navy-700: #1b3a57;
-  --color-navy-600: #2a4f72;
+  --color-ink: #0e1d3d;
+  --color-navy-950: #0a1530;
+  --color-navy-900: #0e1d3d;
+  --color-navy-800: #172a52;
+  --color-navy-700: #233b6b;
+  --color-navy-600: #34518a;
 
-  --color-teal-50: #ecf6f5;
-  --color-teal-100: #d3ebe8;
-  --color-teal-200: #a9d6d1;
-  --color-teal-500: #1e8f8a;
-  --color-teal-600: #137572;
-  --color-teal-700: #0f5f5d;
+  --color-teal-50: #e8f8f4;
+  --color-teal-100: #c9efe5;
+  --color-teal-200: #93dcc9;
+  --color-teal-500: #12a38a;
+  --color-teal-600: #0b8572;
+  --color-teal-700: #0a6a5c;
 
-  --color-sand-50: #fbfaf7;
-  --color-sand-100: #f5f2ec;
-  --color-sand-200: #ebe6dc;
-  --color-sand-300: #dcd5c7;
+  --color-sand-50: #fdfaf5;
+  --color-sand-100: #f8f2e9;
+  --color-sand-200: #efe6d8;
+  --color-sand-300: #e2d6c3;
 
   --color-muted: #5a6573;
   --color-subtle: #8a939e;
 
-  --color-copper-500: #c9773a;
-  --color-copper-600: #ad6229;
-  --color-copper-50: #fbf1e7;
+  --color-copper-500: #f26b3a;
+  --color-copper-600: #c2471d;
+  --color-copper-50: #fff0e8;
 
   --color-demo-50: #fdf5e6;
   --color-demo-200: #f2d7a6;
@@ -40,8 +40,8 @@
   --radius-2xl: 1.25rem;
   --radius-3xl: 1.75rem;
 
-  --shadow-card: 0 1px 2px rgb(11 27 43 / 0.04), 0 4px 16px -4px rgb(11 27 43 / 0.08);
-  --shadow-lift: 0 2px 4px rgb(11 27 43 / 0.05), 0 16px 40px -12px rgb(11 27 43 / 0.18);
+  --shadow-card: 0 1px 2px rgb(14 29 61 / 0.04), 0 4px 16px -4px rgb(14 29 61 / 0.08);
+  --shadow-lift: 0 2px 4px rgb(14 29 61 / 0.05), 0 16px 40px -12px rgb(14 29 61 / 0.18);
 
   --animate-fade-up: fade-up 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
   --animate-shimmer: shimmer 1.6s linear infinite;
@@ -98,7 +98,7 @@
   .font-display {
     font-family: var(--font-display);
     font-optical-sizing: auto;
-    font-variation-settings: "SOFT" 30, "WONK" 0;
+    font-variation-settings: "SOFT" 100, "WONK" 0;
   }
   .skeleton {
     background: linear-gradient(90deg, var(--color-sand-100) 0, var(--color-sand-200) 50%, var(--color-sand-100) 100%);
@@ -106,7 +106,7 @@
     @apply animate-shimmer rounded-xl;
   }
   .input {
-    @apply h-11 w-full rounded-xl border border-sand-300 bg-white px-3.5 text-[15px] text-ink shadow-[0_1px_0_rgb(11_27_43/0.02)] transition placeholder:text-subtle hover:border-navy-600/40 focus:border-teal-500 focus:ring-4 focus:ring-teal-500/15 focus:outline-none;
+    @apply h-11 w-full rounded-xl border border-sand-300 bg-white px-3.5 text-[15px] text-ink shadow-[0_1px_0_rgb(14_29_61/0.02)] transition placeholder:text-subtle hover:border-navy-600/40 focus:border-teal-500 focus:ring-4 focus:ring-teal-500/15 focus:outline-none;
   }
   .label {
     @apply mb-1.5 block text-sm font-medium text-navy-800;

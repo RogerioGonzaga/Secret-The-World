@@ -10,25 +10,26 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "LIVORA — Descubra onde viver melhor",
-    template: "%s · LIVORA",
+    default: `${siteConfig.name} — ${siteConfig.tagline}`,
+    template: `%s · ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  applicationName: "LIVORA",
+  applicationName: siteConfig.name,
+  keywords: ["morar no exterior", "custo de vida", "comparar cidades", "salários no exterior", "câmbio", "qualidade de vida", "mudar de país"],
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    siteName: "LIVORA",
-    title: "LIVORA — Descubra onde viver melhor",
+    url: "/",
+    siteName: siteConfig.name,
+    title: `${siteConfig.name} — ${siteConfig.tagline}`,
     description: siteConfig.description,
   },
-  twitter: { card: "summary_large_image" },
+  twitter: { card: "summary_large_image", title: `${siteConfig.name} — ${siteConfig.tagline}`, description: siteConfig.description },
   alternates: { canonical: "/" },
-  icons: { icon: "/icon.svg" },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0b1b2b",
+  themeColor: "#0e1d3d",
   width: "device-width",
   initialScale: 1,
 };

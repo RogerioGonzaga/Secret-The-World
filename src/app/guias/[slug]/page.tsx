@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { withSocial } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Info } from "lucide-react";
@@ -13,7 +14,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const a = getArticle((await params).slug);
   if (!a) return { title: "Guia não encontrado" };
-  return { title: a.title, description: a.excerpt, alternates: { canonical: `/guias/${a.slug}` }, openGraph: { type: "article", title: a.title, description: a.excerpt } };
+  return withSocial({ title: a.title, description: a.excerpt, alternates: { canonical: `/guias/${a.slug}` }, openGraph: { type: "article", publishedTime: a.publishedAt, modifiedTime: a.updatedAt } });
 }
 
 export default async function GuiaPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -21,7 +22,7 @@ export default async function GuiaPage({ params }: { params: Promise<{ slug: str
   if (!article) notFound();
   const related = getArticles().filter((a) => a.slug !== article.slug).sort((a, b) => Number(b.category === article.category) - Number(a.category === article.category)).slice(0, 3);
   const destinations = (article.relatedDestinations ?? []).map(getDestination).filter((d) => d !== undefined);
-  const jsonLd = { "@context": "https://schema.org", "@type": "Article", headline: article.title, description: article.excerpt, datePublished: article.publishedAt, dateModified: article.updatedAt, author: { "@type": "Organization", name: "LIVORA" } };
+  const jsonLd = { "@context": "https://schema.org", "@type": "Article", headline: article.title, description: article.excerpt, datePublished: article.publishedAt, dateModified: article.updatedAt, author: { "@type": "Organization", name: "Partiu Morar" } };
 
   return (
     <article className="container-page max-w-3xl py-12">
@@ -39,7 +40,7 @@ export default async function GuiaPage({ params }: { params: Promise<{ slug: str
         })}
       </div>
       <p className="mt-10 rounded-xl bg-sand-100 p-4 text-xs leading-relaxed text-muted">
-        Conteúdo de orientação geral produzido pela equipe da LIVORA, sem citação de pesquisas ou especialistas externos. Regras de imigração e tributação mudam: confirme sempre nas fontes oficiais.
+        Conteúdo de orientação geral produzido pela equipe do Partiu Morar, sem citação de pesquisas ou especialistas externos. Regras de imigração e tributação mudam: confirme sempre nas fontes oficiais.
       </p>
       {destinations.length > 0 && (
         <section className="mt-12" aria-labelledby="dest-rel">

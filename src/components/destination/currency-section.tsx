@@ -84,15 +84,15 @@ export function CurrencySection({ dest, snapshot }: { dest: Destination; snapsho
                 <AreaChart data={history.points} margin={{ left: 0, right: 8, top: 8, bottom: 0 }}>
                   <defs>
                     <linearGradient id="fx" x1="0" x2="0" y1="0" y2="1">
-                      <stop offset="0%" stopColor="#1e8f8a" stopOpacity={0.25} />
-                      <stop offset="100%" stopColor="#1e8f8a" stopOpacity={0} />
+                      <stop offset="0%" stopColor="#12a38a" stopOpacity={0.25} />
+                      <stop offset="100%" stopColor="#12a38a" stopOpacity={0} />
                     </linearGradient>
                   </defs>
-                  <CartesianGrid stroke="#ebe6dc" vertical={false} />
+                  <CartesianGrid stroke="#efe6d8" vertical={false} />
                   <XAxis dataKey="date" tickFormatter={(d: string) => d.slice(5, 7) + "/" + d.slice(2, 4)} tick={{ fontSize: 11, fill: "#8a939e" }} minTickGap={32} axisLine={false} tickLine={false} />
                   <YAxis domain={["auto", "auto"]} tick={{ fontSize: 11, fill: "#8a939e" }} width={56} axisLine={false} tickLine={false} tickFormatter={(v: number) => formatNumber(v, 3)} />
                   <Tooltip formatter={(v) => [formatNumber(Number(v), 4), historyTarget]} labelFormatter={(l) => formatDate(String(l))} />
-                  <Area type="monotone" dataKey="rate" stroke="#137572" strokeWidth={2} fill="url(#fx)" />
+                  <Area type="monotone" dataKey="rate" stroke="#0b8572" strokeWidth={2} fill="url(#fx)" />
                 </AreaChart>
               </ResponsiveContainer>
             </div>

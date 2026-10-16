@@ -28,7 +28,7 @@ export function CityImage({
   return (
     <div className={cn("relative overflow-hidden bg-navy-800", className)}>
       {failed ? (
-        <div className="absolute inset-0 flex flex-col items-start justify-end bg-[radial-gradient(120%_80%_at_20%_10%,#1e8f8a_0%,#12283e_55%,#071320_100%)] p-5 text-white">
+        <div className="absolute inset-0 flex flex-col items-start justify-end bg-[radial-gradient(120%_80%_at_20%_10%,#12a38a_0%,#172a52_55%,#0a1530_100%)] p-5 text-white">
           {name && (
             <>
               <MapPin className="mb-2 size-5 opacity-70" aria-hidden />

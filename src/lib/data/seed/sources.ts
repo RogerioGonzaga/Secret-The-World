@@ -7,7 +7,7 @@ import type { Provenance, Source } from "@/lib/domain/types";
 export const sources: Source[] = [
   {
     id: "livora-demo",
-    name: "Dados demonstrativos LIVORA",
+    name: "Dados demonstrativos Partiu Morar",
     kind: "demo",
     methodology:
       "Valores ilustrativos de ordem de grandeza, preparados pela equipe de desenvolvimento para testar a interface e os cálculos. Não foram coletados de uma fonte primária.",
@@ -16,7 +16,7 @@ export const sources: Source[] = [
   },
   {
     id: "livora-editorial",
-    name: "Pesquisa editorial LIVORA (pendente de verificação)",
+    name: "Pesquisa editorial Partiu Morar (pendente de verificação)",
     kind: "estimate",
     methodology:
       "Informação geral compilada pela equipe a partir de conhecimento público e de órgãos oficiais citados. Aguarda conferência individual na fonte original.",
@@ -58,7 +58,7 @@ export const sources: Source[] = [
     id: "user-input",
     name: "Informado por você",
     kind: "user",
-    methodology: "Valores digitados por você nas ferramentas da LIVORA.",
+    methodology: "Valores digitados por você nas ferramentas do Partiu Morar.",
     limitations: "Os resultados dependem da exatidão das informações fornecidas.",
   },
 ];

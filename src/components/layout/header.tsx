@@ -77,7 +77,7 @@ export function Header() {
                     <X className="size-5" aria-hidden />
                   </Dialog.Close>
                 </div>
-                <Dialog.Description className="sr-only">Navegação principal da LIVORA</Dialog.Description>
+                <Dialog.Description className="sr-only">Navegação principal do Partiu Morar</Dialog.Description>
                 <nav aria-label="Menu móvel" className="mt-6">
                   <ul className="space-y-1">
                     {[...navItems, { href: "/guias", label: t.nav.guides, icon: BookOpen }, { href: "/favoritos", label: t.nav.favorites, icon: Heart }].map((item) => (

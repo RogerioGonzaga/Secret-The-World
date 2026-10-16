@@ -3,7 +3,8 @@ import { expect, test } from "@playwright/test";
 test.describe("fluxos principais", () => {
   test("homepage tem busca com sugestões que leva ao destino", async ({ page }) => {
     await page.goto("/");
-    await expect(page.getByRole("heading", { level: 1 })).toContainText("Seu próximo capítulo");
+    await expect(page).toHaveTitle(/Partiu Morar/);
+    await expect(page.getByRole("heading", { level: 1 })).toContainText("Seu próximo destino começa aqui.");
     const search = page.getByRole("combobox", { name: /pesquisar cidade/i });
     await search.fill("lisb");
     await expect(page.getByRole("option", { name: /Lisboa/ })).toBeVisible();

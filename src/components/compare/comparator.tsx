@@ -18,7 +18,7 @@ import { ShareButton } from "@/components/favorites/actions";
 import { EmptyState } from "@/components/ui/primitives";
 import { cn } from "@/lib/utils";
 
-const COLORS = ["#137572", "#1b3a57", "#c9773a"];
+const COLORS = ["#0b8572", "#233b6b", "#f26b3a"];
 const groupLabels: Record<CompareRow["group"], string> = { custos: "Custos", trabalho: "Trabalho e renda", qualidade: "Qualidade de vida", geral: "Informações gerais" };
 
 export function Comparator({ destinations, snapshot, initialSlugs }: { destinations: Destination[]; snapshot: ExchangeSnapshot; initialSlugs: string[] }) {
@@ -117,7 +117,7 @@ export function Comparator({ destinations, snapshot, initialSlugs }: { destinati
             {userCurrencies.map((c) => <option key={c}>{c}</option>)}
           </select>
         </div>
-        {selected.length >= MIN_COMPARE && <ShareButton title="Comparação na LIVORA" label="Compartilhar comparação" className="ml-auto" />}
+        {selected.length >= MIN_COMPARE && <ShareButton title="Comparação no Partiu Morar" label="Compartilhar comparação" className="ml-auto" />}
       </div>
 
       {!result ? (
@@ -150,10 +150,10 @@ export function Comparator({ destinations, snapshot, initialSlugs }: { destinati
             <div className="mt-4 h-72" aria-hidden>
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={chartData} margin={{ left: 8, right: 8 }}>
-                  <CartesianGrid stroke="#ebe6dc" vertical={false} />
+                  <CartesianGrid stroke="#efe6d8" vertical={false} />
                   <XAxis dataKey="label" tick={{ fontSize: 12, fill: "#5a6573" }} axisLine={false} tickLine={false} />
                   <YAxis tick={{ fontSize: 11, fill: "#8a939e" }} axisLine={false} tickLine={false} width={72} tickFormatter={(v: number) => formatMoney(v, currency, { compact: true })} />
-                  <Tooltip formatter={(v) => formatMoney(Number(v), currency)} cursor={{ fill: "#f5f2ec" }} />
+                  <Tooltip formatter={(v) => formatMoney(Number(v), currency)} cursor={{ fill: "#f8f2e9" }} />
                   <Legend />
                   {selected.map((d, i) => <Bar key={d.slug} dataKey={d.name} fill={COLORS[i]} radius={[6, 6, 0, 0]} />)}
                 </BarChart>

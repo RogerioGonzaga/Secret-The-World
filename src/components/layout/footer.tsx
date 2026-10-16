@@ -21,9 +21,9 @@ const columns = [
     ],
   },
   {
-    title: "LIVORA",
+    title: "Partiu Morar",
     links: [
-      { href: "/sobre", label: "Sobre a LIVORA" },
+      { href: "/sobre", label: "Sobre o Partiu Morar" },
       { href: "/metodologia", label: "Metodologia e fontes" },
       { href: "/privacidade", label: "Privacidade" },
     ],
@@ -36,8 +36,9 @@ export function Footer() {
       <div className="container-page grid gap-12 py-16 md:grid-cols-[1.3fr_repeat(3,1fr)]">
         <div className="max-w-sm">
           <Logo inverted />
-          <p className="mt-4 text-sm leading-relaxed text-white/65">
-            Uma plataforma para planejar onde morar com clareza financeira e informação transparente sobre a origem de cada dado.
+          <p className="font-display mt-5 text-xl text-white">Seu próximo destino começa aqui.</p>
+          <p className="mt-2 text-sm leading-relaxed text-white/65">
+            Ajudamos você a descobrir onde vale a pena morar, com clareza financeira e transparência sobre a origem de cada dado.
           </p>
         </div>
         {columns.map((col) => (
@@ -76,8 +77,8 @@ export function Footer() {
             </p>
           </div>
           <div className="md:text-right">
-            <p>As informações da LIVORA são estimativas para planejamento e não substituem orientação jurídica, migratória ou financeira profissional.</p>
-            <p className="mt-1">© {new Date().getFullYear()} LIVORA. Nenhum link de parceiro ou afiliado nesta versão.</p>
+            <p>As informações do Partiu Morar são estimativas para planejamento e não substituem orientação jurídica, migratória ou financeira profissional.</p>
+            <p className="mt-1">© {new Date().getFullYear()} Partiu Morar. Nenhum link de parceiro ou afiliado nesta versão.</p>
           </div>
         </div>
       </div>

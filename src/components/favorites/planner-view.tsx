@@ -55,7 +55,7 @@ export function PlannerView({ destinations, sharedSlugs }: { destinations: Desti
             <h2 id="meus-favoritos" className="font-display text-3xl font-medium">Destinos salvos <span className="text-subtle">({favorites.length})</span></h2>
             {favorites.length > 0 && (
               <div className="flex flex-wrap gap-2">
-                <ShareButton title="Minha lista de destinos na LIVORA" label="Compartilhar lista" url={`/favoritos?lista=${favorites.map((f) => f.slug).join(",")}`} />
+                <ShareButton title="Minha lista de destinos no Partiu Morar" label="Compartilhar lista" url={`/favoritos?lista=${favorites.map((f) => f.slug).join(",")}`} />
                 {selected.length >= 2 ? (
                   <Link href={`/comparar?cidades=${selected.join(",")}`} className={buttonVariants({ variant: "secondary" })}>
                     <GitCompareArrows aria-hidden /> Comparar selecionados ({selected.length})
@@ -163,7 +163,7 @@ export function PlannerView({ destinations, sharedSlugs }: { destinations: Desti
             </form>
           </div>
           <p className="mt-4 text-xs leading-relaxed text-subtle">
-            Favoritos, anotações e checklist ficam salvos apenas no armazenamento local deste navegador. Nada é enviado aos servidores da LIVORA.
+            Favoritos, anotações e checklist ficam salvos apenas no armazenamento local deste navegador. Nada é enviado aos servidores do Partiu Morar.
           </p>
           {(favorites.length > 0 || doneCount > 0) && (
             <Button variant="ghost" size="sm" className="mt-2 text-copper-600" onClick={() => { if (window.confirm("Apagar todos os favoritos, anotações e a checklist deste navegador?")) planner.clearAll(); }}>

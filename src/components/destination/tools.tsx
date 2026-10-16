@@ -12,7 +12,7 @@ export function DestinationTools({ slug, name }: { slug: string; name: string })
     <div className="no-print flex flex-wrap gap-2">
       <FavoriteButton slug={slug} name={name} variant="full" />
       <CompareButton slug={slug} />
-      <ShareButton title={`${name} na LIVORA`} text={`Veja como é morar em ${name}`} />
+      <ShareButton title={`${name} no Partiu Morar`} text={`Veja como é morar em ${name}`} />
       <Button variant="outline" onClick={() => window.print()}>
         <Printer aria-hidden /> Imprimir resumo
       </Button>

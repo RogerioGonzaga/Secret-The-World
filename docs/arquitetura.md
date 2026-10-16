@@ -1,4 +1,4 @@
-# Arquitetura da LIVORA
+# Arquitetura do Partiu Morar
 
 ## Visão geral
 
@@ -12,7 +12,7 @@ src/
     domain/               Tipos e catálogos (rótulos, metodologias dos indicadores).
     data/                 Repositório (única porta de acesso a dados), validação e seeds.
     calc/                 Regras de negócio puras: custo de vida, impostos, poder de compra,
-                          Índice LIVORA, compatibilidade do questionário.
+                          Índice Partiu Morar, compatibilidade do questionário.
     explore/              Filtros, ordenação, paginação e estado na URL do explorador.
     compare/              Motor do comparador.
     integrations/         Adaptadores externos (exchange/frankfurter.ts) e serviços com fallback.
