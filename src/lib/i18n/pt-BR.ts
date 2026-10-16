@@ -1,0 +1,36 @@
+export const ptBR = {
+  nav: {
+    explore: "Explorar destinos",
+    compare: "Comparar lugares",
+    cost: "Custo de vida",
+    work: "Trabalho",
+    quiz: "Meu destino ideal",
+    guides: "Guias",
+    favorites: "Favoritos",
+    menu: "Menu",
+    close: "Fechar menu",
+    skip: "Pular para o conteúdo",
+  },
+  common: {
+    unavailable: "Dados indisponíveis",
+    demoBadge: "Demonstrativo",
+    source: "Fonte",
+    methodology: "Metodologia",
+    limitations: "Limitações",
+    updatedAt: "Atualizado em",
+    referencePeriod: "Período de referência",
+    seeDestination: "Ver destino",
+    save: "Salvar",
+    saved: "Salvo",
+    addToCompare: "Comparar",
+    inCompare: "Na comparação",
+    share: "Compartilhar",
+    copied: "Link copiado",
+    perMonth: "/mês",
+  },
+  demo: {
+    banner:
+      "Versão de desenvolvimento: custos, salários e indicadores exibidos são demonstrativos e não representam valores reais.",
+    learnMore: "Entenda os dados",
+  },
+} as const;
